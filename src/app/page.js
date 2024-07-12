@@ -1,113 +1,264 @@
-import Image from "next/image";
+/* COMPONENTS and PROPS*/
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+// Example a1
+// function Text() {
+//     return <p>This is text</p>;
+// }
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+// export default function Home() {
+//     return (
+//         <div>
+//             <Text />
+//             <Text />
+//             <Text />
+//         </div>
+//     )
+// }
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+// // Example 1b
+// function Text({ content, strong }) {
+//   // 'Text' is a component, 'content' and  'strong' are prop
+//   if (strong) {
+//     return <strong>{content}</strong>; // function Text is a component
+//   }
+//   return <p>{content}</p>; // function Text is a component
+// }
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+// // anything that is enclosed in a bracket with small case is a regular HTML tag and anything that is enclosed in a bracket with capital case is a component
+// export default function Home() {// Home is a component
+//   return <div>
+//     <Text content='hello world' strong={false}/>
+//     <Text content='my name is' strong={true}/>
+//     <Text content='Hector' strong={false}/>
+//   </div>
+// }
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+// Example 2 - importing a component from another file
+// reading a component in a separate file
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
-}
+// import { Post } from "@/components/Post"; // use this code  when importing a file from dirrent directory with only "export function Post" and @ is an alias for the src directory
+
+// import Post from "@/components/Post"; // curly braces is now removed with only the word 'Post' or any other word you can use but from the other file it should be 'export default function Post......)
+
+// export default function Home() {
+//   return (
+//     <div>
+//       <Post
+//         title="Hector is the best"
+//         author="Hector Nerona"
+//         content="This is my first post!"
+//       />
+//       <br />
+//       <Post
+//         title="Hello World"
+//         author="Hector Nerona"
+//         content="This is my second post!"
+//       />
+//     </div>
+//   );
+// }
+
+// // Example 3 - importing a component Post from another file with 4th props 'following'
+
+// import Post from "@/components/Post"; // import the Post component. @ is an alias for the src directory
+
+// export default function Home() {
+//   return (
+//     <div>
+//       <Post
+//         title="Hector is the best"
+//         author="Hector"
+//         content="This is my first post!"
+//         folllowing={false}
+//       />
+//       <br />
+//       <Post
+//         title="Hello World"
+//         author="Hector"
+//         content="This is my first post!"
+//         following={true}
+//       />
+//     </div>
+//   );
+// }
+
+// // using map to render multiple posts
+// import Post from "@/components/Post"; // import the Post component. @ is an alias for the src directory
+
+// export default function Home() {
+//   const posts = [
+//     {
+//       title: "My Post",
+//       author: "Hector Nerona",
+//       content: "I am the best react developer",
+//       following: false,
+//     },
+//     {
+//       title: "My Post 2",
+//       author: "Hector Nerona",
+//       content: "Just testing things out",
+//       following: true,
+//     },
+//     {
+//       title: "My Post 3",
+//       author: "Hector Nerona",
+//       content: "This is another post",
+//       following: false,
+//     },
+//   ];
+
+//   return (
+//     <>
+//       {posts.map((content, idx) => {
+//         return <Post {...content} key={idx} />;
+//       })}
+//     </>
+//   );
+// };
+
+// // <> </> is a fragment, it is used to wrap multiple elements in a single parent element. It is a shorthand for React.Fragment. It is used to return multiple elements from a component without adding an extra node to the <DOM
+// // {...content} is a spread operator that passes all the properties of the content object as props to the Post component
+
+// Lesson : useState and useEffect
+// "use client"; // this is a pragma that tells Vite to use the client-side version of React
+// import Post from "@/components/Post"; // import the Post component. @ is an alias for the src directory
+// import { useState } from "react"; // import the useState hook from React
+
+// export default function Home() {
+//     const [count, setCount] = useState(0); // set the initial value of count to 0
+
+//     function onCount() {
+//         setCount(count + 1); // increment the count by 1
+//     }
+
+//     return (
+//         <><p>{count}</p>
+//             <button onClick={onCount}>Count Up!</button>
+//         </>
+//     )
+// }
+
+// // create a new Post for controlled component
+
+// "use client"; // this is a pragma that tells Vite to use the client-side version of React
+// import Post from "@/components/Post"; // import the Post component. @ is an alias for the src directory
+// import { useEffect, useState } from "react"; // import the useState hook from React
+
+// export default function Home() {
+//     const [content, setContent] = useState(""); // set the initial value of content to an empty string
+//     const [author, setAuthor] = useState(""); // set the initial value of author to an empty string
+//     const [title, setTitle] = useState(""); // set the initial value of title to an empty string
+//     const [posts, setPosts] = useState([]);// set the initial value of posts to an empty array
+
+//     useEffect(() => {
+//         console.log("run");
+//     }, [content]); // run the useEffect hook when the content state changes
+
+//     // // another example of useEffect
+//     // useEffect(() => {
+//     // if (content.length >= 10) alert("Content is too long!"); // display an alert if the content length is greater than or equal to 10
+//     // }
+
+//     function addPost() {
+//         const newPost = {
+//             title: title,
+//             author: author,
+//             content: content,
+//             following: false,
+//         }; // create a newPost object with the title, author, content, and following properties
+
+//         setPosts([...posts, newPost]); // add the newPost object to the posts array
+//         setContent(""); // reset the content state to an empty string
+//         setAuthor(""); // reset the content state to an empty string
+//         setTitle(""); // reset the content state to an empty string
+
+//     }
+
+//     return (
+//         <div>
+//             <div>
+//                 <input
+//                     type="text"
+//                     value={title}
+//                     onChange={(e) => setTitle(e.target.value)}
+//                     placeholder="Title" // set the value of the input field to the title state and update the title state when the input field changes
+//                 />
+//                 <input
+//                     type="text"
+//                     value={content}
+//                     onChange={(e) => setContent(e.target.value)}
+//                     placeholder="Content"
+//                 />
+//                 <input
+//                     type="text"
+//                     value={author}
+//                     onChange={(e) => setAuthor(e.target.value)}
+//                     placeholder="Author"
+//                 />
+//                 <button onClick={addPost}>Add Post</button>
+//             </div>
+//             <div className="posts">
+//                 {posts.map((post, idx) => (
+//                     <Post {...post} key={idx + Math.random()} />
+//                 ))}
+//             </div>
+//         </div>
+//     );
+// }
+
+// "use client"; // this is a pragma that tells Vite to use the client-side version of React
+// import Post from "@/components/Post"; // import the Post component. @ is an alias for the src directory
+// import { useEffect, useState } from "react"; // import the useState hook from React
+
+// export default function Home() {
+//     const [content, setContent] = useState(""); // set the initial value of content to an empty string
+//     const [author, setAuthor] = useState(""); // set the initial value of author to an empty string
+//     const [title, setTitle] = useState(""); // set the initial value of title to an empty string
+//     const [posts, setPosts] = useState([]);// set the initial value of posts to an empty array
+
+//     function addPost() {
+//         const newPost = {
+//             title: title,
+//             author: author,
+//             content: content,
+//             following: false,
+//         }; // create a newPost object with the title, author, content, and following properties
+
+//         setPosts([...posts, newPost]); // add the newPost object to the posts array
+//         setContent(""); // reset the content state to an empty string
+//         setAuthor(""); // reset the content state to an empty string
+//         setTitle(""); // reset the content state to an empty string
+
+//     }
+
+//     return (
+//         <div>
+//             <div>
+//                 <input
+//                     type="text"
+//                     value={title}
+//                     onChange={(e) => setTitle(e.target.value)}
+//                     placeholder="Title" // set the value of the input field to the title state and update the title state when the input field changes
+//                 />
+//                 <input
+//                     type="text"
+//                     value={content}
+//                     onChange={(e) => setContent(e.target.value)}
+//                     placeholder="Content"
+//                 />
+//                 <input
+//                     type="text"
+//                     value={author}
+//                     onChange={(e) => setAuthor(e.target.value)}
+//                     placeholder="Author"
+//                 />
+//                 <button onClick={addPost}>Add Post</button>
+//             </div>
+//             <div className="posts">
+//                 {posts.map((post, idx) => (
+//                     <Post {...post} key={idx + Math.random()} />
+//                 ))}
+//             </div>
+//         </div>
+//     );
+// }
