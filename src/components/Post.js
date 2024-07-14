@@ -59,17 +59,17 @@
 // }
 
 // Example for controlled component (new POst)
-import "./post.css"; // import the CSS file for the Post component
+// import "./post.css"; // import the CSS file for the Post component
 
-export default function Post({ title, author, content }) {
-    return (
-        <div className="card">
-            <h1>{title}</h1>
-            <h3>By: {author}</h3>
-            <p>{content}</p>
-        </div>
-    );
-}
+// export default function Post({ title, author, content }) {
+//     return (
+//         <div className="card">
+//             <h1>{title}</h1>
+//             <h3>By: {author}</h3>
+//             <p>{content}</p>
+//         </div>
+//     );
+// }
 
 // The Post component now takes in a fourth prop called following.
 // The Post component conditionally renders a button element based on the value of the following prop.

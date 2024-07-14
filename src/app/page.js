@@ -82,7 +82,6 @@
 //   );
 // }
 
-
 // ......................
 // // using map to render multiple posts
 // import Post from "@/components/Post"; // import the Post component. @ is an alias for the src directory
@@ -121,7 +120,6 @@
 // // <> </> is a fragment, it is used to wrap multiple elements in a single parent element. It is a shorthand for React.Fragment. It is used to return multiple elements from a component without adding an extra node to the <DOM
 // // {...content} is a spread operator that passes all the properties of the content object as props to the Post component
 
-
 // ..............................
 // Lesson : useState and useEffect
 // "use client"; // this is a prompt that tells Vite to use the client-side version of React
@@ -143,75 +141,74 @@
 //     )
 // }
 
-
 // xxxxxxxxxxxxx//
 // create a new Post for controlled component
 
-"use client"; // this is a pragma that tells Vite to use the client-side version of React
-import Post from "@/components/Post"; // import the Post component. @ is an alias for the src directory
-import { useEffect, useState } from "react"; // import the useState hook from React
+// "use client"; // this is a pragma that tells Vite to use the client-side version of React
+// import Post from "@/components/Post"; // import the Post component. @ is an alias for the src directory
+// import { useEffect, useState } from "react"; // import the useState hook from React
 
-export default function Home() {
-    const [content, setContent] = useState(""); // set the initial value of content to an empty string
-    const [author, setAuthor] = useState(""); // set the initial value of author to an empty string
-    const [title, setTitle] = useState(""); // set the initial value of title to an empty string
-    const [posts, setPosts] = useState([]);// set the initial value of posts to an empty array
+// export default function Home() {
+//     const [content, setContent] = useState(""); // set the initial value of content to an empty string
+//     const [author, setAuthor] = useState(""); // set the initial value of author to an empty string
+//     const [title, setTitle] = useState(""); // set the initial value of title to an empty string
+//     const [posts, setPosts] = useState([]);// set the initial value of posts to an empty array
 
-    // useEffect(() => {
-    //     console.log("run");
-    // }, [content]); // run the useEffect hook when the content state changes
+//     // useEffect(() => {
+//     //     console.log("run");
+//     // }, [content]); // run the useEffect hook when the content state changes
 
-    // another example of useEffect
-    useEffect(() => {
-        if (content.length >= 10) alert("Content is too long!"); // display an alert if the content length is greater than or equal to 10
-    }, [content]);
+//     // another example of useEffect
+//     useEffect(() => {
+//         if (content.length >= 10) alert("Content is too long!"); // display an alert if the content length is greater than or equal to 10
+//     }, [content]);
 
-    function addPost() {
-        const newPost = {
-            title: title,
-            author: author,
-            content: content,
-            following: false,
-        }; // create a newPost object with the title, author, content, and following properties
+//     function addPost() {
+//         const newPost = {
+//             title: title,
+//             author: author,
+//             content: content,
+//             following: false,
+//         }; // create a newPost object with the title, author, content, and following properties
 
-        setPosts([...posts, newPost]); // add the newPost object to the posts array
-        setContent(""); // reset the content state to an empty string
-        setAuthor(""); // reset the content state to an empty string
-        setTitle(""); // reset the content state to an empty string
+//         setPosts([...posts, newPost]); // add the newPost object to the posts array
+//         setContent(""); // reset the content state to an empty string
+//         setAuthor(""); // reset the content state to an empty string
+//         setTitle(""); // reset the content state to an empty string
 
-    }
+//     }
 
-    return (
-        <div>
-            <div>
-                <input
-                    type="text"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    placeholder="Title" // set the value of the input field to the title state and update the title state when the input field changes
-                />
-                <input
-                    type="text"
-                    value={content}
-                    onChange={(e) => setContent(e.target.value)}
-                    placeholder="Content"
-                />
-                <input
-                    type="text"
-                    value={author}
-                    onChange={(e) => setAuthor(e.target.value)}
-                    placeholder="Author"
-                />
-                <button onClick={addPost}>Add Post</button>
-            </div>
-            <div className="posts">
-                {posts.map((post, idx) => (
-                    <Post {...post} key={idx + Math.random()} />
-                ))}
-            </div>
-        </div>
-    );
-}
+//     return (
+//         <div>
+//             <div>
+//                 <input
+//                     type="text"
+//                     value={title}
+//                     onChange={(e) => setTitle(e.target.value)}
+//                     placeholder="Title" // set the value of the input field to the title state and update the title state when the input field changes
+//                 />
+//                 <input
+//                     type="text"
+//                     value={content}
+//                     onChange={(e) => setContent(e.target.value)}
+//                     placeholder="Content"
+//                 />
+//                 <input
+//                     type="text"
+//                     value={author}
+//                     onChange={(e) => setAuthor(e.target.value)}
+//                     placeholder="Author"
+//                 />
+//                 <button onClick={addPost}>Add Post</button>
+//             </div>
+//             <div className="posts">
+//                 {posts.map((post, idx) => (
+//                     <Post {...post} key={idx + Math.random()} />
+//                 ))}
+//             </div>
+//         </div>
+//     );
+// }
 
 // "use client"; // this is a pragma that tells Vite to use the client-side version of React
 // import Post from "@/components/Post"; // import the Post component. @ is an alias for the src directory
@@ -269,3 +266,60 @@ export default function Home() {
 //         </div>
 //     );
 // }
+
+
+// /*Example : functional component with "test.js" */
+// import Nero from "@/components/test";
+
+// export default function MyHome() {
+//   return (
+//     <>
+//       <Nero
+//         title="My Blog"
+//         author="Hector Nerona"
+//         content="This is my first blog"
+//         spouse="Maria"
+//         strong={true}
+//         />
+//       <br />
+//       <Nero
+//         title="My Blog"
+//         author="Hector Nerona"
+//         content="This is my first blog"
+//         spouse="Maria"
+//         strong={false}
+//         />
+//       <br />
+//       <Nero
+//         title="My Blog"
+//         author="Hector Nerona"
+//         content="This is my first blog"
+//         spouse="Maria"
+//         strong={false}
+//         />
+//     </>
+//   );
+// }
+
+
+// Example: with 'MyComponent'
+// "use client"
+// import MyComponent from "@/components/MyComponent"
+
+// function App(){
+
+//     return (<CounterProgram/>);
+// }
+// export default App
+
+
+// Exmaple : with 'CounterProgram'
+"use client"
+import CounterProgram from "@/components/CounterProgram"
+
+function App(){
+
+    return (<CounterProgram/>);
+}
+export default App
+
